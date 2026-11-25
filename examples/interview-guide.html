@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>Example interview guide | Lead Nap Cave Attendant (sample)</title>
+<meta name="description" content="Example interview guide for a pretend role at a pretend dragon daycare. Sample questions, rating anchors and a roll-up. Mock data only.">
+<style>
+/* Example page. Tokens copied from the portfolio stylesheet so the page shares the site's look.
+   Dark site backdrop, light document sheet. No fixed or sticky layers. Nothing animates. */
+:root{
+ --bg:#070B14;--ink:#F1F5F9;--muted:#A8B3CF;--indigo-text:#818CF8;--cta:#4F46E5;--cyan:#22D3EE;
+ --paper:#FFFFFF;--pi:#0F172A;--pm:#475569;--pb:#64748B;--pl:#CBD5E1;--acc:#4338CA;--tint:#EEF2FF;
+ --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+ --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;color:var(--ink);font:400 1.0625rem/1.55 var(--sans);background-color:var(--bg);
+ background-image:radial-gradient(56rem 34rem at 8% 0,rgba(99,102,241,.24),transparent 62%),radial-gradient(44rem 30rem at 100% 18%,rgba(79,70,229,.16),transparent 62%);
+ background-repeat:no-repeat}
+h1,h2,h3,p,ul,dl,dd{margin:0}
+ul{padding:0;list-style:none}
+button,input,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:3px;border-radius:8px}
+.sheet :focus-visible{outline-color:var(--acc)}
+.wrap{max-width:8.5in;margin-inline:auto;padding:14px clamp(10px,3vw,20px) 40px}
+.top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
+.textlink{display:inline-flex;align-items:center;min-height:44px;color:var(--indigo-text);font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:14px;background:var(--cta);color:#fff;font-weight:700;border:1px solid rgba(255,255,255,.18);cursor:pointer}
+
+.sheet{display:grid;gap:22px;background:var(--paper);color:var(--pi);border-radius:17px;padding:clamp(16px,5vw,44px)}
+.sheet h1{font-size:clamp(1.7rem,5vw,2.4rem);line-height:1.1;letter-spacing:-.025em;font-weight:800}
+.sheet h2{font-size:1.3rem;line-height:1.2;letter-spacing:-.015em;font-weight:800}
+.sheet h3{font-size:1rem;font-weight:700}
+.kicker{font:600 .78rem/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--acc)}
+.head{display:grid;gap:10px;padding-bottom:18px;border-bottom:2px solid var(--pi)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip,.mock{padding:5px 10px;border:1px solid var(--pb);border-radius:999px;font-size:.88rem;font-weight:700}
+.chip{background:var(--tint)}
+.mock{border-radius:8px;font:600 .76rem/1.6 var(--mono);letter-spacing:.12em}
+.asof,.hint,.ns,.legal{color:var(--pm);font-size:.92rem}
+.legal{font-weight:700}
+.note{display:grid;gap:8px}
+.rules{display:grid;gap:6px;padding-left:1.2rem;list-style:disc}
+.comp,.roll{display:grid;gap:12px;padding-top:20px;border-top:1px solid var(--pl)}
+.qs,.rate{display:grid;gap:8px}
+label{font-weight:700}
+.ns{font-weight:400;margin-left:6px}
+input,textarea{width:100%;min-height:44px;padding:10px 12px;background:var(--paper);border:1px solid var(--pb);border-radius:10px}
+textarea{resize:vertical}
+.lines{display:none}
+
+.pick{display:flex;gap:12px;align-items:flex-start;width:100%;min-height:44px;padding:10px 12px;text-align:left;background:var(--paper);border:1px solid var(--pb);border-radius:10px;cursor:pointer}
+.pick::before{content:"";flex:none;display:grid;place-items:center;width:24px;height:24px;border:2px solid var(--pm);border-radius:6px;font:700 14px/1 var(--sans)}
+.r::before{content:attr(data-v)}
+.pick[aria-pressed="true"]{background:var(--tint);border-color:var(--acc);box-shadow:inset 0 0 0 1px var(--acc);font-weight:600}
+.pick[aria-pressed="true"]::before{content:"\2713";background:var(--acc);border-color:var(--acc);color:#fff}
+.r[aria-pressed="true"]::before{content:attr(data-v)}
+.r[aria-pressed="true"]::after{content:"Selected";margin-left:auto;padding-left:8px;font:700 .74rem/1.9 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+.rl{display:grid;gap:0}
+.rl>div{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;padding:10px 0;border-bottom:1px solid var(--pl)}
+.rl dt{font-weight:600}
+.rl dd{font-variant-numeric:tabular-nums}
+.rl .avg{border-bottom:2px solid var(--pi)}
+.rl .avg dt,.rl .avg dd{font-weight:800}
+.yn-row{display:flex;flex-wrap:wrap;gap:8px}
+.yn{width:auto;min-width:120px;align-items:center}
+
+@media print{
+ @page{size:letter;margin:.8in .7in .85in;
+  @top-left{content:"Example interview guide \00B7 Lead Nap Cave Attendant (sample) \00B7 SAMPLE / MOCK DATA";font:600 8pt ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:#000}
+  @bottom-right{content:"Page " counter(page) " of " counter(pages);font:600 8pt ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:#000}
+ }
+ @page :first{@top-left{content:none}}
+ body{background:#fff;color:#000;font-size:10.5pt;line-height:1.4}
+ .wrap{max-width:none;padding:0}
+ .top,.ns,textarea,.count{display:none}
+ .sheet{padding:0;border-radius:0;gap:14pt;color:#000}
+ .sheet h1{font-size:22pt}
+ .sheet h2{font-size:13pt;break-after:avoid}
+ .sheet h3,label,.hint{break-after:avoid}
+ .kicker,.asof,.hint,.legal{color:#000}
+ .chip{background:none}
+ .comp,.roll,.note{break-inside:avoid}
+ .comp,.roll{gap:6pt;padding-top:12pt}
+ .qs,.rate{gap:0}
+ .pick,.pick[aria-pressed="true"]{min-height:0;padding:3pt 0;border:0;border-radius:0;background:none;box-shadow:none}
+ .pick::before{width:12pt;height:12pt;border:1pt solid #000;border-radius:2pt;font-size:8pt}
+ .pick[aria-pressed="true"]::before{background:none;color:#000;border-width:2pt}
+ .r[aria-pressed="true"]::after{color:#000}
+ .yn{min-width:1.2in}
+ input{min-height:0;padding:10pt 0 2pt;border:0;border-bottom:1pt solid #000;border-radius:0}
+ .lines{display:block}
+ .nt{white-space:pre-wrap;overflow-wrap:anywhere}
+ .nt:empty{display:none}
+ .lines i{display:block;height:20pt;border-bottom:1pt solid #000}
+ .nt:not(:empty)~i{display:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="top">
+  <a class="textlink" href="../">Back to the portfolio</a>
+  <button type="button" class="btn" id="print">Print or save as PDF</button>
+ </div>
+ <main class="sheet">
+  <header class="head">
+   <p class="kicker">Smolder &amp; Snooze Dragon Daycare · pretend employer</p>
+   <h1>Example interview guide</h1>
+   <p class="chips"><span class="chip">Lead Nap Cave Attendant (sample)</span><span class="mock">SAMPLE / MOCK DATA</span></p>
+   <p class="asof">As of Tue, Nov 24, 2026. Every name, place and role on this page is invented.</p>
+  </header>
+  <section class="note" aria-labelledby="how">
+   <h2 id="how">How to use this</h2>
+   <p>In each section, pick one or two questions or write your own, and ask them the same way in every interview. Rate the section right after the answer, using the anchor that fits best. Add notes, check the roll-up, then print or save as PDF. Nothing on this page is stored or sent.</p>
+  </section>
+  <section class="note" aria-labelledby="pre">
+   <h2 id="pre">Before you start</h2>
+   <ul class="rules">
+    <li>Ask every candidate the same core questions, so the answers can be compared fairly.</li>
+    <li>Keep every question tied to the job. If it would not help you judge how someone does this role, leave it out.</li>
+    <li>Never ask about age, family plans, religion, health, disability, national origin or any other protected trait. If a candidate raises one, steer back to the job and keep it out of your notes.</li>
+    <li>Take notes on the answers, what was said and done, and not on the person.</li>
+   </ul>
+   <p class="legal">Sample guide for a pretend role. Not legal advice.</p>
+  </section>
+  <section class="comp" aria-labelledby="c1h">
+   <h2 id="c1h">1. Calm under pressure</h2>
+   <p class="hint">Choose 1-2 or write your own. <span class="count" aria-live="polite"></span></p>
+   <ul class="qs">
+    <li><button type="button" class="pick q" aria-pressed="false">Tell me about a time something went wrong in the middle of a shift. A sneeze of fire at nap time counts. What did you do in the first minute?</button></li>
+    <li><button type="button" class="pick q" aria-pressed="false">Describe a moment when several things needed you at once. How did you decide what came first?</button></li>
+    <li><button type="button" class="pick q" aria-pressed="false">Think of a time you had to stay steady while someone near you was upset. What did you say and do?</button></li>
+    <li><button type="button" class="pick q" aria-pressed="false">When did a plan fall apart on you at work, and what did you put in its place?</button></li>
+   </ul>
+   <label for="c1o">Your own question <span class="ns">Not saved. Clears when you leave.</span></label>
+   <input id="c1o" type="text" maxlength="200" autocomplete="off">
+   <h3 id="c1r">Rating: Calm under pressure</h3>
+   <div class="rate" role="group" aria-labelledby="c1r">
+    <button type="button" class="pick r" data-v="1" aria-pressed="false">No example, or froze and waited for someone else to act.</button>
+    <button type="button" class="pick r" data-v="2" aria-pressed="false">Reacted, but the steps were unclear or made things harder.</button>
+    <button type="button" class="pick r" data-v="3" aria-pressed="false">Took sensible steps and things settled.</button>
+    <button type="button" class="pick r" data-v="4" aria-pressed="false">Acted quickly, in a clear order, and kept others informed.</button>
+    <button type="button" class="pick r" data-v="5" aria-pressed="false">Stayed steady, set priorities, steadied others, and named what they changed afterward.</button>
+   </div>
+   <label for="c1t">Notes on the answers <span class="ns">Not saved. Clears when you leave.</span></label>
+   <textarea id="c1t" rows="4" maxlength="1200" autocomplete="off"></textarea>
+   <div class="lines"><p class="nt"></p><i></i><i></i><i></i></div>
+  </section>
+  <section class="comp" aria-labelledby="c2h">
+   <h2 id="c2h">2. Care routines</h2>
+   <p class="hint">Choose 1-2 or write your own. <span class="count" aria-live="polite"></span></p>
+   <ul class="qs">
+    <li><button type="button" class="pick q" aria-pressed="false">Walk me through a routine you were responsible for running every day. How did you make sure no step was skipped?</button></li>
+    <li><button type="button" class="pick q" aria-pressed="false">Tell me about a time you noticed a small detail was off before it became a problem. What tipped you off?</button></li>
+    <li><button type="button" class="pick q" aria-pressed="false">Describe a time you taught a routine to someone new. How did you check that they had it?</button></li>
+    <li><button type="button" class="pick q" aria-pressed="false">Give an example of a safety rule you followed even when it slowed you down. Why did you hold to it?</button></li>
+   </ul>
+   <label for="c2o">Your own question <span class="ns">Not saved. Clears when you leave.</span></label>
+   <input id="c2o" type="text" maxlength="200" autocomplete="off">
+   <h3 id="c2r">Rating: Care routines</h3>
+   <div class="rate" role="group" aria-labelledby="c2r">
+    <button type="button" class="pick r" data-v="1" aria-pressed="false">No routine described, or steps were skipped without noticing.</button>
+    <button type="button" class="pick r" data-v="2" aria-pressed="false">Knew the routine but relied on memory, and gaps showed.</button>
+    <button type="button" class="pick r" data-v="3" aria-pressed="false">Followed a set routine and finished it reliably.</button>
+    <button type="button" class="pick r" data-v="4" aria-pressed="false">Used a checklist or habit to catch misses, with a clear example.</button>
+    <button type="button" class="pick r" data-v="5" aria-pressed="false">Improved the routine, caught a problem early, and taught it to others.</button>
+   </div>
+   <label for="c2t">Notes on the answers <span class="ns">Not saved. Clears when you leave.</span></label>
+   <textarea id="c2t" rows="4" maxlength="1200" autocomplete="off"></textarea>
+   <div class="lines"><p class="nt"></p><i></i><i></i><i></i></div>
+  </section>
+  <section class="comp" aria-labelledby="c3h">
+   <h2 id="c3h">3. Teamwork</h2>
+   <p class="hint">Choose 1-2 or write your own. <span class="count" aria-live="polite"></span></p>
+   <ul class="qs">
+    <li><button type="button" class="pick q" aria-pressed="false">Tell me about a shift handoff that went well. What did you pass along, and how?</button></li>
+    <li><button type="button" class="pick q" aria-pressed="false">Describe a time you and a coworker disagreed about how to do a task. How did it end?</button></li>
+    <li><button type="button" class="pick q" aria-pressed="false">When have you stepped in for a teammate who was falling behind? What did you take on?</button></li>
+    <li><button type="button" class="pick q" aria-pressed="false">Tell me about feedback from a teammate that changed how you work.</button></li>
+   </ul>
+   <label for="c3o">Your own question <span class="ns">Not saved. Clears when you leave.</span></label>
+   <input id="c3o" type="text" maxlength="200" autocomplete="off">
+   <h3 id="c3r">Rating: Teamwork</h3>
+   <div class="rate" role="group" aria-labelledby="c3r">
+    <button type="button" class="pick r" data-v="1" aria-pressed="false">No example, or blamed others throughout.</button>
+    <button type="button" class="pick r" data-v="2" aria-pressed="false">Worked beside others but shared little.</button>
+    <button type="button" class="pick r" data-v="3" aria-pressed="false">Shared information and helped when asked.</button>
+    <button type="button" class="pick r" data-v="4" aria-pressed="false">Offered help unasked and settled a disagreement respectfully.</button>
+    <button type="button" class="pick r" data-v="5" aria-pressed="false">Made the team better: clear handoffs, shared credit, and acted on feedback.</button>
+   </div>
+   <label for="c3t">Notes on the answers <span class="ns">Not saved. Clears when you leave.</span></label>
+   <textarea id="c3t" rows="4" maxlength="1200" autocomplete="off"></textarea>
+   <div class="lines"><p class="nt"></p><i></i><i></i><i></i></div>
+  </section>
+  <section class="comp" aria-labelledby="c4h">
+   <h2 id="c4h">4. Reliability</h2>
+   <p class="hint">Choose 1-2 or write your own. <span class="count" aria-live="polite"></span></p>
+   <ul class="qs">
+    <li><button type="button" class="pick q" aria-pressed="false">Tell me about a time people counted on you to open or close on your own. How did you prepare?</button></li>
+    <li><button type="button" class="pick q" aria-pressed="false">Describe a work commitment that turned out harder to keep than you expected. What happened?</button></li>
+    <li><button type="button" class="pick q" aria-pressed="false">Give an example of a mistake you made and reported yourself. What did you do next?</button></li>
+    <li><button type="button" class="pick q" aria-pressed="false">How have you kept track of recurring duties so nothing slipped over several weeks?</button></li>
+   </ul>
+   <label for="c4o">Your own question <span class="ns">Not saved. Clears when you leave.</span></label>
+   <input id="c4o" type="text" maxlength="200" autocomplete="off">
+   <h3 id="c4r">Rating: Reliability</h3>
+   <div class="rate" role="group" aria-labelledby="c4r">
+    <button type="button" class="pick r" data-v="1" aria-pressed="false">No example, or commitments were dropped without a word.</button>
+    <button type="button" class="pick r" data-v="2" aria-pressed="false">Kept commitments when reminded.</button>
+    <button type="button" class="pick r" data-v="3" aria-pressed="false">Kept commitments and spoke up early when something slipped.</button>
+    <button type="button" class="pick r" data-v="4" aria-pressed="false">Planned ahead, tracked duties, and owned a mistake.</button>
+    <button type="button" class="pick r" data-v="5" aria-pressed="false">Trusted to work alone; reported their own errors and fixed the cause.</button>
+   </div>
+   <label for="c4t">Notes on the answers <span class="ns">Not saved. Clears when you leave.</span></label>
+   <textarea id="c4t" rows="4" maxlength="1200" autocomplete="off"></textarea>
+   <div class="lines"><p class="nt"></p><i></i><i></i><i></i></div>
+  </section>
+  <section class="roll" aria-labelledby="rh">
+   <h2 id="rh">Roll-up</h2>
+   <dl class="rl">
+    <div><dt>1. Calm under pressure</dt><dd id="r1">Not rated yet</dd></div>
+    <div><dt>2. Care routines</dt><dd id="r2">Not rated yet</dd></div>
+    <div><dt>3. Teamwork</dt><dd id="r3">Not rated yet</dd></div>
+    <div><dt>4. Reliability</dt><dd id="r4">Not rated yet</dd></div>
+    <div class="avg"><dt>Average</dt><dd id="ravg">Rate a section to see the average.</dd></div>
+   </dl>
+   <p class="hint">Average = total of the rated sections, divided by the number of sections rated, shown to one decimal. Unrated sections are left out.</p>
+   <h3 id="rech">Recommend</h3>
+   <div class="yn-row" role="group" aria-labelledby="rech">
+    <button type="button" class="pick yn" aria-pressed="false">Yes</button>
+    <button type="button" class="pick yn" aria-pressed="false">No</button>
+   </div>
+   <p class="hint">The average is a summary. The recommendation is your judgment of the answers.</p>
+  </section>
+ </main>
+</div>
+<script>
+// No storage, no network. State lives in memory and is cleared on every page show.
+(function () {
+  'use strict';
+  var comps = [].slice.call(document.querySelectorAll('.comp'));
+  var yn = [].slice.call(document.querySelectorAll('.yn'));
+  var score = comps.map(function () { return 0; });
+  function press(b, on) { b.setAttribute('aria-pressed', on ? 'true' : 'false'); }
+  function isOn(b) { return b.getAttribute('aria-pressed') === 'true'; }
+
+  // Roll-up: average = sum of rated sections / count of rated sections, one decimal.
+  function roll() {
+    var sum = 0, n = 0;
+    score.forEach(function (v, i) {
+      document.getElementById('r' + (i + 1)).textContent = v ? v + ' of 5' : 'Not rated yet';
+      if (v) { sum += v; n += 1; }
+    });
+    document.getElementById('ravg').textContent = n
+      ? (Math.round(sum / n * 10) / 10).toFixed(1) + ' of 5 (' + sum + ' ÷ ' + n + ' rated section' + (n === 1 ? '' : 's') + ')'
+      : 'Rate a section to see the average.';
+  }
+
+  comps.forEach(function (c, i) {
+    var count = c.querySelector('.count'), ta = c.querySelector('textarea'), nt = c.querySelector('.nt');
+    c.addEventListener('click', function (e) {
+      var b = e.target.closest('button.pick');
+      if (!b) return;
+      var on = !isOn(b);
+      if (b.classList.contains('r')) {
+        [].forEach.call(c.querySelectorAll('.r'), function (x) { press(x, false); });
+        press(b, on);
+        score[i] = on ? Number(b.getAttribute('data-v')) : 0;
+        roll();
+      } else {
+        press(b, on);
+        var k = c.querySelectorAll('.q[aria-pressed="true"]').length;
+        count.textContent = k ? k + ' chosen.' + (k > 2 ? ' The guide suggests 1-2.' : '') : '';
+      }
+    });
+    // Mirror notes into a plain block so the printout shows all of the text.
+    ta.addEventListener('input', function () { nt.textContent = ta.value; });
+  });
+
+  yn.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var on = !isOn(b);
+      yn.forEach(function (x) { press(x, false); });
+      press(b, on);
+    });
+  });
+
+  document.getElementById('print').addEventListener('click', function () { window.print(); });
+
+  function reset() {
+    [].forEach.call(document.querySelectorAll('.pick'), function (b) { press(b, false); });
+    [].forEach.call(document.querySelectorAll('.sheet input,.sheet textarea'), function (f) { f.value = ''; });
+    [].forEach.call(document.querySelectorAll('.nt,.count'), function (x) { x.textContent = ''; });
+    score = score.map(function () { return 0; });
+    roll();
+  }
+  window.addEventListener('pageshow', reset);
+})();
+</script>
+</body>
+</html>
